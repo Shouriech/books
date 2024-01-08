@@ -1,0 +1,4 @@
+{% extends 'base.html' %}
+{% block content %}
+<div> user's library goes here </div>
+{% endblock %}
