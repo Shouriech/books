@@ -6,9 +6,6 @@ from urllib.parse import quote
 
 bp = Blueprint('views', __name__)
 
-API_KEY = 'AIzaSyBPEX1Y6p-PBQU6IWHGjkEuR0xikDQtgZI'
-api = 'https://www.googleapis.com/books/v1/volumes?q=search+terms'
-
 @bp.route('/')
 def index():
     if g.user:
