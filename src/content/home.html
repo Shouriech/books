@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="image-holder">
+        <div class="square"></div>
+    </div>
+  
+    <div class="text-holder">
+        <span>Track the Books you’ve read.</span> 
+        <span>Save the ones you want to read.</span> 
+        <span>Tell your friends what’s good.</span> 
+
+        <button><a href="{{ url_for('auth.register')}}">Sign up - It's free!</a></button>
+{% endblock %}
