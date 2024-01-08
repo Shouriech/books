@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  type="text/css" href="{{url_for('static', filename='main.css')}}">
+    <script src="{{url_for('static', filename='index.js')}}"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <h1>Bookshelf</h1>
+            <ul>
+                {% if g.user %}
+                <li><a href=" {{ url_for('views.browse') }} ">Browse</a></li>
+                <li><a href=" {{ url_for('views.your_list') }} ">Your List</a></li>
+                <li><a href="#"><strong>Hello, {{ g.user.username }}</strong></a></li>
+                <li><a href=" {{ url_for('auth.logout') }} ">Logout</a></li>
+                
+                {% else %}
+                <li><a href=" {{ url_for('auth.login') }} ">Login</a></li>
+                <li><a href=" {{ url_for('auth.register') }} ">Register</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+        <section class="content">
+            {% block content %}{% endblock %}
+        </section>
+    </div>
+
+    
+</body>
+</html>
